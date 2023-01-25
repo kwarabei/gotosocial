@@ -95,11 +95,6 @@ func (m *Module) BookmarksGETHandler(c *gin.Context) {
 		return
 	}
 
-	if errWithCode != nil {
-		apiutil.ErrorHandler(c, errWithCode, m.processor.InstanceGet)
-		return
-	}
-
 	if resp.LinkHeader != "" {
 		c.Header("Link", resp.LinkHeader)
 	}
